@@ -6,12 +6,12 @@ services:
     ports:
       - 8084:3000
     volumes:
-      - ~/config/grafana:/var/lib/grafana
+      - ./config/grafana:/var/lib/grafana
 
   influxdb:
     image: influxdb:1.8
     volumes:
-      - ~/config/influxdb:/var/lib/influxdb
+      - ./config/influxdb:/var/lib/influxdb
     ports:
       - "8083:8083"
       - "8086:8086"
