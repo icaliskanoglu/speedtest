@@ -4,14 +4,14 @@ services:
     image: grafana/grafana:latest
     restart: always
     ports:
-      - 3000:3000
+      - 8084:3000
     volumes:
-      - grafana:/var/lib/grafana
+      - ~/config/grafana:/var/lib/grafana
 
   influxdb:
-    image: influxdb
+    image: influxdb:1.8
     volumes:
-      - influxdb:/var/lib/influxdb
+      - ~/config/influxdb:/var/lib/influxdb
     ports:
       - "8083:8083"
       - "8086:8086"
@@ -24,13 +24,9 @@ services:
     image: robinmanuelthiel/speedtest:latest
     environment:
       - LOOP=true
-      - LOOP_DELAY=1800
+      - LOOP_DELAY=300
       - DB_SAVE=true
       - DB_HOST=http://influxdb:8086
       - DB_NAME=speedtest
       - DB_USERNAME=admin
       - DB_PASSWORD=password
-
-volumes:
-  grafana:
-  influxdb:
