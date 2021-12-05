@@ -21,7 +21,7 @@ services:
       - INFLUXDB_DB="speedtest"
 
   speedtest:
-    image: robinmanuelthiel/speedtest:latest
+    image: ghcr.io/icaliskanoglu/speedtest:master
     environment:
       - LOOP=true
       - LOOP_DELAY=300
