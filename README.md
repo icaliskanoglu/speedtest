@@ -5,7 +5,7 @@
 Check your internet bandwidth using the [Speedtest CLI](https://www.speedtest.net/apps/cli) from a Docker container. You can configure the tool to run periodically and save the results to an InfluxDB for visualization or long-term records.
 
 ```bash
-$ docker run --rm robinmanuelthiel/speedtest:latest
+$ docker run --rm ghcr.io/icaliskanoglu/speedtest:master
 ```
 
 The result will then look like this:
@@ -58,7 +58,7 @@ services:
       - INFLUXDB_DB="speedtest"
 
   speedtest:
-    image: robinmanuelthiel/speedtest:latest
+    image: ghcr.io/icaliskanoglu/speedtest:master
     environment:
       - LOOP=true
       - LOOP_DELAY=1800
