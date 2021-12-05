@@ -31,7 +31,7 @@ run_speedtest()
         curl -s -S -XPOST "$DB_HOST/write?db=$DB_NAME&precision=s&u=$DB_USERNAME&p=$DB_PASSWORD" \
             --data-binary "upload,host=$HOSTNAME value=$UPLOAD $DATE"
         curl -s -S -XPOST "$DB_HOST/write?db=$DB_NAME&precision=s&u=$DB_USERNAME&p=$DB_PASSWORD" \
-            --data-binary "upload,host=$HOSTNAME value=$PING $DATE"
+            --data-binary "ping,host=$HOSTNAME value=$PING $DATE"
         echo "Values saved."
     fi
 }
